@@ -1,0 +1,44 @@
+class Product:
+    # initialize
+    # self is a premade that refers to the Product Class and
+    #__init__ intializes the " name " and " ingreideint " String
+
+    def __init__(self, name, ingredients):
+        self.name = name
+        self.ingredients = self.getIngredients()
+
+    # function : getIngredients
+    # arguments : self (name)
+    # returns : ingredients (string)
+    # mthd to get a ingridient when the user types one of the things they want to bake
+    def getIngredients(self):
+        if self.name == "cake":
+            return " Eggs , Flour , cheese , icing "
+        if self.name == "muffin":
+            return "Flour, chococalte chips "
+        if self.name == "cupcake":
+            return "flour"
+
+print("Welcome to Ramy's Bakery, What would you like to bake today?")
+
+# this is where the user can input what they want to bake
+userInput = input("")
+# X is a new object that is created and is referencing to the Product class and recording the users input
+x = Product(userInput, "")
+#Now the ingd is an object that gets the ingridents ( from the code on top )  which matches the users input
+ingd = x.getIngredients()
+#z = ingd.split(",")
+print("How many ppl?")
+# here the users input is recorded again
+userInput = input("")
+#listIng = ' '
+
+#for i in z:
+#    listIng = listIng + userInput + i
+
+# the object sep is equaled to a comma and the user input
+sep = ", " + userInput
+#here the  comma in the ingrd object  is being replaced with the user input of how much people need the baking item
+z = ingd.replace(",", sep)
+# everything gets printed
+print(userInput + z)
